@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Benchmark - Before Insert Flow Text Assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Benchmark - After Insert Flow Text Assignment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Default_Text_Field</name>
+        <label>Set Default Text Field</label>
+        <locationX>556</locationX>
+        <locationY>127</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Text_1__c</field>
+            <value>
+                <stringValue>Benchmark Test</stringValue>
+            </value>
+        </inputAssignments>
+        <object>After_Save_Field_Update__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>86</locationX>
+        <locationY>63</locationY>
+        <connector>
+            <targetReference>Set_Default_Text_Field</targetReference>
+        </connector>
+        <object>After_Save_Field_Update__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

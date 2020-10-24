@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Benchmark - Before Delete Insert Child Record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Benchmark - Before Delete Insert Child Record</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Child_Record</name>
+        <label>Create Child Record</label>
+        <locationX>564</locationX>
+        <locationY>119</locationY>
+        <inputAssignments>
+            <field>Description__c</field>
+            <value>
+                <stringValue>Before Delete Benchmark</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Before_Delete_Child__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>70</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Create_Child_Record</targetReference>
+        </connector>
+        <object>Before_Delete_Example__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

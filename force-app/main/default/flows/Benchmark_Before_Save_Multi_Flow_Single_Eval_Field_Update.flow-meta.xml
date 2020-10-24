@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Field_1_Assignment</name>
+        <label>Update Field 1</label>
+        <locationX>748</locationX>
+        <locationY>117</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Field_1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Default Value</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Update_Field_1</name>
+        <label>Update Field 1?</label>
+        <locationX>504</locationX>
+        <locationY>119</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Field_To_Update__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Field 1</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Field_1_Assignment</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Benchmark - Before Save Multi Flow Single Eval Field Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Benchmark - Before Save Multi Flow Single Eval Field Update 1</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Update_Field_1</targetReference>
+        </connector>
+        <object>Before_Save_Multiple_Flow_Single_Update__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
